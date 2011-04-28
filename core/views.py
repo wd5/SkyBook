@@ -17,11 +17,24 @@ def render_to_response(request, template_name, context_dict={}):
     return _render_to_response(template_name, context_instance=context)
 
 
+def chapter(request, chapter_id):
+    try:
+        chapter_id = int(chapter_id)
+    except ValueError:
+        chapter_id = 1
+        
+    return render_to_response(request, 'chapter.html', {'current_chapter': chapter_id, 
+                                                        'paragraphs': Paragraph.objects.filter(chapter=chapter_id)
+                                                        })
 
-def chapter(request):
-    return render_to_response(request, 'chapter.html', {})
 
-
-
-def paragraph(request):
-    return render_to_response(request, 'paragraph.html', {})
+def paragraph(request, chapter_id, paragraph_id):
+    try:
+        chapter_id = int(chapter_id)
+        paragraph_id = int(paragraph_id)
+    except ValueError:
+        raise Http404
+    
+    return render_to_response(request, 'paragraph.html', {'current_chapter': chapter_id, 
+                                                          'paragraph': Paragraph.objects.get(pk=paragraph_id)
+                                                          })

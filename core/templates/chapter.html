@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load content %}
+
+{% block content %}
+    {% navigation current_chapter %}
+    
+    {% for paragraph in paragraphs %}
+        {{ paragraph|linked_content }}
+        <hr>
+    {% endfor %}
+{% endblock %}

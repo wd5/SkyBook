@@ -4,8 +4,7 @@ from django.contrib.auth.views import password_reset
 
 from views import *
 
-urlpatterns = patterns('',    
-   
-    url(r'^(?P<chapter>\d+)/$', chapter, name='chapter'),
-    url(r'^(?P<chapter>\d+)/(?P<paragraph>\d+)', paragraph, name='paragraph'),
+urlpatterns = patterns('core.views',       
+    url(r'^(?P<chapter_id>\d+)/$', chapter, name='chapter'),
+    url(r'^(?P<chapter_id>\d+)/(?P<paragraph_id>\d+)/$', paragraph, name='paragraph'),
     )

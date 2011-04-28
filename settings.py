@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Django settings for perspectiva project.
-import os, platform, sys
+import os
 
 APPEND_SLASH = False
 
@@ -85,7 +85,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'core.middleware.Process404Middleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
@@ -110,7 +109,13 @@ INSTALLED_APPS = (
 
 
 try:
-    import local_settings
+    from local_settings import *
 except ImportError:
     pass
 
+EXCEPTION_LOG_FILE = os.path.join(LOG_PATH, 'exception.log')
+TRACEBACK_LOG_FILE = os.path.join(LOG_PATH, 'traceback.log')
+
+LOGGING_FORMAT = '%(asctime)s %(name)-15s %(levelname)s %(message)s'
+LOGGING_MAX_FILE_SIZE = 1 * 1024 * 1024 #: Максимальный размер файла с логами в байтах.
+LOGGING_MAX_FILES_COUNT = 10 #: Количество бекапов файлов с логами.

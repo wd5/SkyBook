@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load content %}
+
+{% block content %}
+    {% navigation current_chapter %}
+    <br>
+    <a href="/book/{{ current_chapter}}/">К главе</a>
+    <hr>
+    
+    {{ paragraph.content|safe }}
+
+{% endblock %}

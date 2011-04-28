@@ -1,0 +1,8 @@
+{% for chapter in chapters %}
+    {% ifequal chapter.pk current_chapter %}
+        {{ chapter.pk }}
+    {% else %}
+        <a href="{{ chapter.get_absolute_url }}">{{ chapter.pk }}</a>
+    {% endifequal %}
+    &nbsp;
+{% endfor %}

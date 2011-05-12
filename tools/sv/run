@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo $(date) restarted >> /var/log/projects/dropdb/restart.log
+exec chpst -u www python /home/www/projects/dropdb/manage.py runfcgi maxspare=1 errlog=/var/log/projects/dropdb/fcgi-error.log method=prefork host=127.0.0.1 port=3036 pidfile=/home/www/projects/dropdb/pid daemonize=false

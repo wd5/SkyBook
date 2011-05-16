@@ -1,0 +1,17 @@
+{% extends "book/base.html" %}
+{% load content %}
+
+{% block content %}
+	<div class="onetextblock">
+		{{ paragraph|linked_content }}
+		<div class="copywiki">
+			Кнопки социальных сетей, берутся у социальных сетей
+			<div class="commimg"><img src="{% MEDIA_URL %}i/comment.jpg" alt="Комментарии"></div>
+		</div>
+
+		<div><a href="{{ paragraph.chapter.get_absolute_url }}#{{ paragraph.pk }}">к главе</a></div>   
+		<div>{% if prev %}<a href="{{ prev.get_absolute_url }}">назад</a>{% endif %}
+		     {% if next %}<a href="{{ next.get_absolute_url }}">далее</a>{% endif %}
+		</div>    
+	</div> 
+{% endblock %}

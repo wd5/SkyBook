@@ -23,7 +23,7 @@ def chapter(request, chapter_id):
     except ValueError:
         chapter_id = 1
         
-    return render_to_response(request, 'chapter.html', {'current_chapter': chapter_id, 
+    return render_to_response(request, 'book/chapter.html', {'current_chapter': chapter_id, 
                                                         'paragraphs': Paragraph.objects.filter(chapter=chapter_id)
                                                         })
 
@@ -35,6 +35,19 @@ def paragraph(request, chapter_id, paragraph_id):
     except ValueError:
         raise Http404
     
-    return render_to_response(request, 'paragraph.html', {'current_chapter': chapter_id, 
-                                                          'paragraph': Paragraph.objects.get(pk=paragraph_id)
-                                                          })
+    try:
+        prev = Paragraph.objects.filter(pk__lt=paragraph_id).reverse()[0]
+    except IndexError:
+        prev = None
+        
+    try:
+        next = Paragraph.objects.filter(pk__gt=paragraph_id)[0]
+    except IndexError:
+        next = None
+        
+    return render_to_response(request, 'book/paragraph.html', 
+                              {'current_chapter': chapter_id, 
+                               'paragraph': Paragraph.objects.get(pk=paragraph_id),
+                               'prev': prev,
+                               'next': next,
+                              })

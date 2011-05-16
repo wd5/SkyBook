@@ -1,0 +1,7 @@
+{% load content %}
+<div id="crab">
+	{% for chapter in chapters %}
+		<a href="{{ chapter.get_absolute_url }}"><img {% if chapter.padding %}style="padding-left: 20px;"{% endif %}
+		    src="{% MEDIA_URL %}i/lenta{% ifequal chapter.pk current_chapter %}-red{% endifequal %}.png" alt="{{ chapter.title }}"></a>
+	{% endfor %}
+</div>

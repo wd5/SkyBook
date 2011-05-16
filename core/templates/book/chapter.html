@@ -1,0 +1,14 @@
+{% extends "book/base.html" %}
+{% load content %}
+
+{% block content %}
+    {% for paragraph in paragraphs %}   
+		<div class="onetextblock"><a name="{{ paragraph.pk }}"></a>
+			{{ paragraph|linked_content }}
+			<div class="copywiki">
+				Кнопки социальных сетей, берутся у социальных сетей
+				<div class="commimg"><img src="{% MEDIA_URL %}i/comment.jpg" alt="Комментарии"></div>
+			</div>
+		</div>        
+    {% endfor %}
+{% endblock %}

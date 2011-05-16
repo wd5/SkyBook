@@ -44,4 +44,4 @@ class Paragraph(models.Model):
     class Meta:
         verbose_name = u"Параграф"
         verbose_name_plural = u"Параграфы"
-        ordering = ('chapter', 'order',)
+        ordering = ('id',)

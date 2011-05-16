@@ -14,9 +14,12 @@ def MEDIA_URL():
     return settings.MEDIA_URL
 
 
-@register.inclusion_tag('b_chapters.html')
+@register.inclusion_tag('book/b_chapters.html')
 def navigation(current_chapter):
-    return {'chapters': Chapter.objects.all(), 'current_chapter': current_chapter}
+    chapters = list(Chapter.objects.all())
+    chapters[4].padding = True
+    chapters[8].padding = True    
+    return {'chapters': chapters, 'current_chapter': current_chapter}
 
 
 @register.filter

@@ -23,11 +23,11 @@ img {
 #flowers {
     width: 100%;
     height: 537px;
-    background-image: url('{% MEDIA_URL %}i/bg.jpg');
+    background-image: url('i/bg.jpg');
 }
 
 #shadow {
-    background-image: url('{% MEDIA_URL %}i/shadow.png');
+    background-image: url('i/shadow.png');
     width: 100%;
     height: 537px;
     background-position: bottom;
@@ -42,7 +42,7 @@ img {
     position: absolute;
     font-size: 14px;
     font-family: Tahoma;
-    background-image: url('{% MEDIA_URL %}i/shadowlore.png');
+    background-image: url('i/shadowlore.png');
     line-height: 20px;
     text-align:justify;
     padding-top: 15px;

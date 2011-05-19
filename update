@@ -1,0 +1,16 @@
+#!/bin/sh
+path=/home/www/projects/skybook
+
+echo "Updating git"
+git pull
+
+python $path/manage.py migrate
+
+echo "Restarting fcgi "
+
+#kill -KILL `cat $path/pid`
+#python $path/manage.py runfcgi minspare=1 maxspare=1 errlog=/var/log/projects/dropdb/fcgi-error.log  method=prefork host=127.0.0.1 port=3036 pidfile=$path/pid
+
+sudo sv restart skybook
+
+echo " ok"

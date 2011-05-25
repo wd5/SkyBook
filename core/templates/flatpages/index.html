@@ -1,65 +1,55 @@
 {% load content %}<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
-<meta name="description" content="Сайт как мера силы зла">  
-<meta name="keywords" content="Измеритель, зло">
-<meta name='yandex-verification' content='66e21b1c71d1f62c'>
-<title>Друг людей, защитник кошек</title>
 
-{% block style %}
-	<link rel="stylesheet" href="{% MEDIA_URL %}index.css"/>
-{% endblock %}
+<title>Хагакуре — Сокрытое в листве</title>
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta name="description" content="Хагакуре - сокрытое в листве">
+<meta name="keywords" content="Хагакуре">
+
+<link rel="stylesheet" href="{% MEDIA_URL %}index.css"/>
 </head>
 
 <body>
 
-<div id="haga">
-    <a href="/book1/">
-        <img src="{% MEDIA_URL %}i/halink.png" alt="" title="">
-    </a>
+<div id="hugelogo">
+	<a href="/"><img src="{% MEDIA_URL %}i/hugelogo.png" alt="Хагакуре — Сокрытое в листве" title="Хагакуре — Сокрытое в листве"></a>
 </div>
 
-<div id="lore">
+<div id="clist">
 
-<img id="img-a" src="{% MEDIA_URL %}i/A.png" alt="Simple A">
+<ul style="float:left;">
+<li><a href="{% url chapter 1 %}">Из Книги Первой</a></li>
+<li><a href="{% url chapter 2 %}">Из Книги Второй</a></li>
+<li><a href="{% url chapter 3 %}">Из Книги Третьей</a></li>
+<li><a href="{% url chapter 4 %}">Из Книги Четвертой</a></li>
+<li><a href="{% url chapter 6 %}">Из Книги Шестой</a></li>
+</ul>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis sapien in ipsum rutrum ac pharetra augue ultricies. Maecenas adipiscing erat mauris, eu venenatis diam. Duis eu purus vel lacus tempor pellentesque eget ac dui. Etiam bibendum tempus velit. In nec dui tortor. Vivamus sem ligula, vulputate vel adipiscing eget, aliquam interdum lacus. Pellentesque mattis nisi eget mauris sollicitudin pharetra. Nam sed sapien ipsum, in tincidunt nibh. Quisque id neque id quam scelerisque mollis. Fusce sodales velit eu lectus pretium sed pellentesque arcu semper. Donec sed dolor lacus, dignissim vehicula turpis. Suspendisse tempus ullamcorper est nec facilisis.</p>
+<ul style="float:right; margin-right: 10px;">
+<li><a href="{% url chapter 7 %}">Из Книги Седьмой</a></li>
+<li><a href="{% url chapter 8 %}">Из Книги Восьмой</a></li>
+<li><a href="{% url chapter 9 %}">Из Книги Девятой</a></li>
+<li><a href="{% url chapter 10 %}">Из Книги Десятой</a></li>
+<li><a href="{% url chapter 11 %}">Из Книги Одиннадцатой</a></li>
 
+<!--<li>Праздный вечерний разговор</li>
+<li>История книги, источники</li>-->
+</ul>
 
-<p>
-Nullam accumsan, libero non tempor feugiat, augue lectus pharetra lectus, et tincidunt enim massa eu ante. Morbi sollicitudin pulvinar nibh, in sagittis tortor egestas in. Aenean placerat turpis libero. Curabitur vitae nulla elit. Praesent a fermentum urna. Maecenas non libero mauris, eget facilisis metus. Sed id leo libero, ac tincidunt turpis. Donec ut nibh at lorem consectetur pulvinar. Fusce molestie, dui vestibulum facilisis iaculis, leo diam euismod felis, eget suscipit odio elit quis lacus. In sapien sapien, sagittis at malesuada eu, tempor vitae mauris.</p>
+</div>
 
-<h1>
-Anonymouse</h1>
-
+<div class="onetextblock">
+«Хагакурэ» — это проповедь бусидо, кодекса чести самурая. Оно провозглашает бусидо как «Путь смерти», или «жизнь так, как будто ты уже мёртв». Согласно «Хагакурэ», самурай готов умереть в любой момент, во имя сохранения чести (воинской чести). По мнению Юкио Мисимы все заповеди Дзете Ямамото появились на фоне преувеличенных, до крайности изысканных вкусов японцев, живших в эпохи Гэнроку (1688—1704) и Хоэй (1704—1709) как отрицание существовавших ценностей.<br>
+<div id="copywiki">© Wikipedia, <a href="http://ru.wikipedia.org/wiki/Хагакурэ">http://ru.wikipedia.org/wiki/Хагакурэ</a></div>
 
 </div>
 
-<div id="flowers">
-    <div id="shadow">
-        <div id="anon"><img src="{% MEDIA_URL %}i/anon.png" alt="
-Anonymouse face"></div>
+<a href="http://dropdb.ru"><img src="dropdblink.png" alt="" title="" id="dropdb"></a>
 
-    </div>
-</div>
-
-<div id="count">
-
-<!--LiveInternet counter--><script type="text/javascript"><!--
-document.write("<a href='http://www.liveinternet.ru/click' "+
-"target=_blank><img src='//counter.yadro.ru/hit?t50.5;r"+
-escape(document.referrer)+((typeof(screen)=="undefined")?"":
-";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-";"+Math.random()+
-"' alt='' title='LiveInternet' "+
-"border='0' width='31' height='31'><\/a>")
-//--></script><!--/LiveInternet-->
-
-
-</div>
 </body>
 </html>

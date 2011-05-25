@@ -2,27 +2,36 @@
 <html>
 <head>
 
-<title>Хагакуре - Сокрытое в листве</title>
+    <title>Хагакуре - Сокрытое в листве</title>
 
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
-<meta name="description" content="Хагакуре - сокрытое в листве">
-<meta name="keywords" content="Хагакуре">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <meta name="description" content="Хагакуре - сокрытое в листве">
+    <meta name="keywords" content="Хагакуре">
 
-<link rel="stylesheet" href="{% MEDIA_URL %}book.css"/>
+    <link rel="stylesheet" href="{% MEDIA_URL %}book.css"/>
+
+    <script src="http://connect.facebook.net/ru_RU/all.js#appId=100542906705768&amp;xfbml=1"></script>
+    <script type="text/javascript" src="http://vkontakte.ru/js/api/share.js?11" charset="windows-1251"></script>
+    <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+    <script type="text/javascript">
+      VK.init({apiId: 2339281, onlyWidgets: true});
+    </script>
 
 </head>
 <body>
-	{% navigation current_chapter %}	    
-	
+	{% navigation current_chapter %}
+
 	<div id="hugelogo">
 		<h1 align="center">Хагакурэ — Сокрытое в листве</h1>
-		<h2 align="center">Праздничный вечерний разговор</h2>		
+		<h2 align="center">{% block page_title %}Праздный вечерний разговор{% endblock %}</h2>
 	</div>
-	
+
 	{% block content %}{% endblock %}
-	
-	<a href="/"><img src="{% MEDIA_URL %}i/dropdblink.png" alt="" title="" id="dropdb"></a>
+
+	<a href="http://dropdb.ru"><img src="{% MEDIA_URL %}i/dropdblink.png" alt="" title="" id="dropdb"></a>
 </body>
 </html>

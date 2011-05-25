@@ -1,0 +1,8 @@
+<div id="fb-root"></div>
+<fb:like href="http://книгасамурая.рф{{ paragraph.get_absolute_url }}" layout="button_count" show_faces="true" width="150"></fb:like>
+
+<script type="text/javascript"><!--
+    document.write(VK.Widgets.Like({pageUrl: "http://книгасамурая.рф{{ paragraph.get_absolute_url }}", pageTitle: "Книга самурая"}, {{ paragraph.id }}));
+--></script>
+
+<a href="http://twitter.com/share?text={{ paragraph.chapter.title|urlencode }}" class="twitter-share-button">Tweet</a>

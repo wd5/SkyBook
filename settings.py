@@ -15,7 +15,7 @@ DATABASE_HOST = ''             # Set to empty string for localhost. Not used wit
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 DATABASE_OPTIONS = {
-                    "init_command": "SET storage_engine=MYISAM",  
+                    "init_command": "SET storage_engine=MYISAM",
                     'charset': 'utf8',
                     }
 
@@ -98,7 +98,7 @@ INSTALLED_APPS = (
     'django_errorlog',
     'django_russian',
     'south',
-    'core', 
+    'core',
     'django.contrib.sites',
     'django.contrib.flatpages',
 )
@@ -107,6 +107,7 @@ INSTALLED_APPS = (
 # Настройки сайта
 #
 
+VK_API_ID = 2339281
 
 try:
     from local_settings import *

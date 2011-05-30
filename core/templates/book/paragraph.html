@@ -13,5 +13,18 @@
 		<div>{% if prev %}<a href="{{ prev.get_absolute_url }}">назад</a>{% endif %}
 		     {% if next %}<a href="{{ next.get_absolute_url }}">далее</a>{% endif %}
 		</div>
+
+        <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?29"></script>
+
+        <script type="text/javascript">
+            VK.init({apiId: {% VK_API_ID %}, onlyWidgets: true});
+        </script>
+
+        <!-- Put this div tag to the place, where the Comments block will be -->
+        <a name="comments"></a><div id="vk_comments"></div>
+        <script type="text/javascript">
+            item_id = 'par_{{ paragraph.pk }}';
+            VK.Widgets.Comments("vk_comments", {limit: 15, width: "600", attach: "*", onChange: vk_comment}, item_id);
+        </script>
 	</div>
 {% endblock %}

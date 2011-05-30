@@ -9,7 +9,7 @@
 			{{ paragraph|linked_content }}
 			<div class="copywiki">
                 {% include "book/b_social_buttons.html" %}
-				<div class="commimg"><img src="{% MEDIA_URL %}i/comment.jpg" alt="Комментарии"></div>
+				<div class="commimg"><a href="{{ paragraph.get_absolute_url }}#comments"><img src="{% MEDIA_URL %}i/comment.jpg" alt="Комментарии"></a></div>
 			</div>
 		</div>
     {% endfor %}

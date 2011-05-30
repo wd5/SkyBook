@@ -13,12 +13,16 @@ register = template.Library()
 def MEDIA_URL():
     return settings.MEDIA_URL
 
+@register.simple_tag
+def VK_API_ID():
+    return settings.VK_API_ID
+
 
 @register.inclusion_tag('book/b_chapters.html')
 def navigation(current_chapter):
     chapters = list(Chapter.objects.all())
     chapters[4].padding = True
-    chapters[8].padding = True    
+    chapters[8].padding = True
     return {'chapters': chapters, 'current_chapter': current_chapter}
 
 
@@ -32,4 +36,3 @@ def linked_content(paragraph):
     else:
         other = u'.' + other
     return mark_safe(u'<a href="%s">%s</a>%s' % (paragraph.get_absolute_url(), first, other))
-    

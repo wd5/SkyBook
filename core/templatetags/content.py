@@ -28,11 +28,5 @@ def navigation(current_chapter):
 
 @register.filter
 def linked_content(paragraph):
-    content = paragraph.content
-    first, other = content.split('.', 1)
-    if len(first) > 60:
-        first, separator, other = re.split('([:.,])', content, 1)
-        other = separator + other
-    else:
-        other = u'.' + other
+    first, other = paragraph.split_content()
     return mark_safe(u'<a href="%s">%s</a>%s' % (paragraph.get_absolute_url(), first, other))

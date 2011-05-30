@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import re
+
 from django.db import models
-from django.conf import settings
 from django.core.urlresolvers import reverse
 
-    
+
 class GenericManager(models.Manager):
     """
     Filters query set with given selectors
@@ -18,13 +19,13 @@ class GenericManager(models.Manager):
 
 class Chapter(models.Model):
     title = models.CharField(verbose_name=u"Название", max_length=200)
-    
+
     def __unicode__(self):
         return self.title
-    
+
     def get_absolute_url(self):
         return reverse('chapter', args=[self.pk])
-        
+
     class Meta:
         verbose_name = u"Глава"
         verbose_name_plural = u"Главы"
@@ -39,8 +40,21 @@ class Paragraph(models.Model):
         return u"%s: параграф %s" % (self.chapter.title, self.order)
 
     def get_absolute_url(self):
-        return reverse('paragraph', args=[self.chapter_id, self.pk])        
-   
+        return reverse('paragraph', args=[self.chapter_id, self.pk])
+
+    def split_content(self):
+        first, other = self.content.split('.', 1)
+        if len(first) > 60:
+            first, separator, other = re.split('([:.,])', self.content, 1)
+            other = separator + other
+        else:
+            other = u'.' + other
+        return (first, other)
+
+    @property
+    def first_sentence(self):
+        return self.split_content()[0]
+
     class Meta:
         verbose_name = u"Параграф"
         verbose_name_plural = u"Параграфы"

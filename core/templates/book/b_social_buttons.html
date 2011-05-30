@@ -5,4 +5,4 @@
     document.write(VK.Widgets.Like({pageUrl: "http://книгасамурая.рф{{ paragraph.get_absolute_url }}", pageTitle: "Книга самурая"}, {{ paragraph.id }}));
 --></script>
 
-<a href="http://twitter.com/share?text={{ paragraph.chapter.title|urlencode }}" class="twitter-share-button">Tweet</a>
+<a href="http://twitter.com/share?text={{ paragraph.first_sentence|urlencode }}&url=http://xn--80aaajylsd6ahy0m.xn--p1ai{{ paragraph.get_absolute_url }}" class="twitter-share-button">Tweet</a>

@@ -1,5 +1,5 @@
 #!/bin/sh
-path=/home/www/projects/skybook
+path=/home/www/projects/sky/skybook
 
 echo "Updating git"
 git pull

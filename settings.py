@@ -107,7 +107,7 @@ INSTALLED_APPS = (
 # Настройки сайта
 #
 
-VK_API_ID = 2339281
+VK_API_ID = 2347075
 
 try:
     from local_settings import *

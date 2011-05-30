@@ -17,14 +17,13 @@
         <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?29"></script>
 
         <script type="text/javascript">
-            VK.init({apiId: {% VK_API_ID %}, onlyWidgets: true});
+            VK.init({apiId: 2347075, onlyWidgets: true});
         </script>
 
         <!-- Put this div tag to the place, where the Comments block will be -->
         <a name="comments"></a><div id="vk_comments"></div>
         <script type="text/javascript">
-            item_id = 'par_{{ paragraph.pk }}';
-            VK.Widgets.Comments("vk_comments", {limit: 15, width: "600", attach: "*", onChange: vk_comment}, item_id);
+            VK.Widgets.Comments("vk_comments", {limit: 15, width: "600", attach: "*"}, 'par_{{ paragraph.pk }}');
         </script>
 	</div>
 {% endblock %}

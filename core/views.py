@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect, HttpResponse, Http404
-from django.shortcuts import get_object_or_404
-from django.template import RequestContext, Context, loader
-from django.conf import settings
-
-from django.contrib.flatpages.views import flatpage
+from django.http import Http404
+from django.template import RequestContext
 
 from models import Chapter, Paragraph
 

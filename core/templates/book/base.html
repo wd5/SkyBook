@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="{% MEDIA_URL %}book.css"/>
 
     <script src="http://connect.facebook.net/ru_RU/all.js#appId=100542906705768&amp;xfbml=1"></script>
-    <script type="text/javascript" src="http://vkontakte.ru/js/api/share.js?11" charset="windows-1251"></script>
-    <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?31"></script>
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
     <script type="text/javascript">
-      VK.init({apiId: 2339281, onlyWidgets: true});
+      VK.init({apiId: {% VK_API_ID %}, onlyWidgets: true});
     </script>
 
 </head>

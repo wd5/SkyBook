@@ -1,10 +1,8 @@
 User-agent: *
 Disallow: 
-Host: www.dropdb.ru
 
 User-agent: Yandex
 Disallow: 
-Host: www.dropdb.ru
 
 #                _,u-*P"9\w__     __..e-w.__                                 
 #              _a*^          ^w.e*'"_____   `*mw____                          

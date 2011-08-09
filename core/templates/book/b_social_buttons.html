@@ -1,20 +1,3 @@
-<table border="0">
-  <tr>
-    <td>
-
-      <div id="fb-root"></div>
-      <fb:like href="http://xn--80aaajylsd6ahy0m.xn--p1ai{{ paragraph.get_absolute_url }}" layout="button_count" show_faces="true" width="150"></fb:like>
-    </td>
-    <td>
-
-      <div id="vk_like"></div>
-      <script type="text/javascript">
-         VK.Widgets.Like("vk_like", {type: "10", pageUrl: "http://xn--80aaajylsd6ahy0m.xn--p1ai{{ paragraph.get_absolute_url }}", pageTitle: "Книга самурая: {{ paragraph.first_sentence }}"}, "par_{{ paragraph.id }}");
-      </script>
-    </td>
-
-    <td>
-      <a href="http://twitter.com/share?text={{ paragraph.first_sentence|urlencode }}&url=http://xn--80aaajylsd6ahy0m.xn--p1ai{{ paragraph.get_absolute_url }}" class="twitter-share-button">Tweet</a>
-    </td>
-  </tr>
-</table>
+<span id="ya_share_{{ paragraph.id }}" class="js-share" 
+      data-id="{{ paragraph.id }}" data-url="http://xn--80aaajylsd6ahy0m.xn--p1ai{{ paragraph.get_absolute_url }}"
+      data-title="Книга самурая: {{ paragraph.first_sentence }}"></span>

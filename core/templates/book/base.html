@@ -12,14 +12,8 @@
 
     <link rel="stylesheet" href="{% MEDIA_URL %}book.css"/>
 
-    <script src="http://connect.facebook.net/ru_RU/all.js#appId=100542906705768&amp;xfbml=1"></script>
-    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?31"></script>
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
-    <script type="text/javascript">
-      VK.init({apiId: {% VK_API_ID %}, onlyWidgets: true});
-    </script>
-
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://yandex.st/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
 	{% navigation current_chapter %}
@@ -32,5 +26,22 @@
 	{% block content %}{% endblock %}
 
 	<a href="http://dropdb.ru"><img src="{% MEDIA_URL %}i/dropdblink.png" alt="" title="" id="dropdb"></a>
+
+<script type="text/javascript">
+    $('.js-share').each(function(){
+        console.log($(this).data('id'), $(this).data('url'));
+        
+        new Ya.share({
+            element: 'ya_share_' + $(this).data('id'),
+            elementStyle: {
+                'type': 'button',
+                'border': true,
+                'quickServices': ['vkontakte','facebook','twitter']
+            },
+            link: $(this).data('url'),
+            title: $(this).data('title')
+        });        
+    }); 
+</script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 {% extends "book/base.html" %}
 {% load content %}
 
+{% block title %}Хагакурэ: Глава #{{ chapter.id }}{% endblock %}
+
 {% block page_title %}{{ chapter.title }}{% endblock %}
 
 {% block content %}

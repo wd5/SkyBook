@@ -1,29 +1,37 @@
 {% extends "book/base.html" %}
 {% load content %}
 
+{% block title %}Хагакурэ: Цитата #{{ paragraph.pk }} «{{ paragraph.first_sentence|striptags }}...»{% endblock %}
+
+{% block page_title %}{{ paragraph.chapter.title }}{% endblock %}
+
 {% block content %}
-	<div class="onetextblock">
-		{{ paragraph|linked_content }}
-		<div class="copywiki">
-			{% include "book/b_social_buttons.html" %}
-			<div class="commimg"><img src="{% MEDIA_URL %}i/comment.jpg" alt="Комментарии"></div>
+    <div id="pnumber">#{{ paragraph.pk }}</div>
+	<div id="pshare">{% include "book/b_social_buttons.html" %}</div>
+	<div class="onetextblockin">
+		{{ paragraph.content|safe }}
+		
+
+		<div id="pnav">
+		{% if prev %}<a href="{{ prev.get_absolute_url }}">← Предыдущая цитата |</a>{% endif %}
+		<a href="{{ paragraph.chapter.get_absolute_url }}#{{ paragraph.pk }}">↑ Вернуться к главе</a>
+		     {% if next %}<a href="{{ next.get_absolute_url }}">| Следующая цитата →</a>{% endif %}
 		</div>
 
-		<div><a href="{{ paragraph.chapter.get_absolute_url }}#{{ paragraph.pk }}">к главе</a></div>
-		<div>{% if prev %}<a href="{{ prev.get_absolute_url }}">назад</a>{% endif %}
-		     {% if next %}<a href="{{ next.get_absolute_url }}">далее</a>{% endif %}
-		</div>
+
 
         <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?29"></script>
-
-        <script type="text/javascript">
-            VK.init({apiId: 2347075, onlyWidgets: true});
-        </script>
-
-        <!-- Put this div tag to the place, where the Comments block will be -->
-        <a name="comments"></a><div id="vk_comments"></div>
-        <script type="text/javascript">
-            VK.Widgets.Comments("vk_comments", {limit: 15, width: "600", attach: "*"}, 'par_{{ paragraph.pk }}');
-        </script>
+	
+		<div id="vkcomments">
+	        <script type="text/javascript">
+	            VK.init({apiId: 2347075, onlyWidgets: true});
+	        </script>
+	
+	        <!-- Put this div tag to the place, where the Comments block will be -->
+	        <a name="comments"></a><div id="vk_comments"></div>
+	        <script type="text/javascript">
+	            VK.Widgets.Comments("vk_comments", {limit: 15, width: "500", attach: "*"}, 'par_{{ paragraph.pk }}');
+	        </script>
+		</div>
 	</div>
 {% endblock %}

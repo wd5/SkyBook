@@ -31,7 +31,20 @@ body {
     line-height: 1.6;
     color: #262626;
     letter-spacing: 0px;
-    text-align: left;
+    text-align: justify;
+}
+
+.onetextblockin {
+    clear: both;
+    padding-top: 30px;
+    width: 700px;
+    margin: 0 auto;
+    font-family: Tahoma;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #262626;
+    letter-spacing: 0px;
+    text-align: justify;
 }
  
 .copywiki {
@@ -41,6 +54,17 @@ body {
     font-size: 11px;
 }
  
+#pshare {
+	padding-top: 10px;
+	font-family: Georgia;
+	font-size: 11px;
+	letter-spacing: 0px;
+	font-weight: normal;
+	margin: 0 auto;
+	width: 700px;
+	color: #757575;
+	text-align: center;
+} 
  
 .copywiki a {
     text-decoration: none;
@@ -84,7 +108,7 @@ h2 {
 	letter-spacing: 0px;
 	font-weight: normal;
 	padding: 0px;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 	margin: 0px;
 	
 }
@@ -93,4 +117,40 @@ h2 {
 	width: 700px;
     margin: 0 auto;
 	text-align: center;
+}
+
+a {
+	 color: #262626;	
+}
+
+#pnumber {
+	font-family: Georgia;
+	font-size: 38px;
+	letter-spacing: 0px;
+	font-weight: normal;
+	margin: 0 auto;
+	width: 700px;
+	text-align: center;
+}
+
+#vkcomments {
+	padding-top: 20px;
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#pnav {
+	padding-top: 15px;
+	font-family: Arial;
+	font-size: 10px;
+	letter-spacing: 1px;
+	font-weight: normal;
+	margin: 0 auto;
+	width: 500px;
+	text-align: center;
+}
+
+#pnav a {
+	text-decoration: none;
 }

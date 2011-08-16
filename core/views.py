@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.template import RequestContext
+from django.core.mail import mail_admins
 
 from models import Chapter, Paragraph
 
 
-def render_to_response(request, template_name, context_dict={}):
+def render_to_response(request, template_name, context_dict=None):
     from django.shortcuts import render_to_response as _render_to_response
-    context = RequestContext(request, context_dict)
+    context = RequestContext(request, context_dict or {})
     return _render_to_response(template_name, context_instance=context)
 
 
@@ -47,3 +48,17 @@ def paragraph(request, chapter_id, paragraph_id):
                                'prev': prev,
                                'next': next,
                               })
+
+
+def vk_comment(request):
+    try:
+        paragraph = Paragraph.objects.get(pk=request.GET.get('paragraph'))
+    except Paragraph.DoesNotExist:
+        raise Http404
+    
+    url = paragraph.get_absolute_url()
+    mail_admins(u"Хагакурэ: новый комментарий",
+                "Новый комментарий у параграфа %s" % url,                
+    )
+
+    return HttpResponse('ok')

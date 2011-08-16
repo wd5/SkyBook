@@ -9,16 +9,14 @@
     <div id="pnumber">#{{ paragraph.pk }}</div>
 	<div id="pshare">{% include "book/b_social_buttons.html" %}</div>
 	<div class="onetextblockin">
-		{{ paragraph.content|safe }}
-		
+    
+		{{ paragraph.content|safe }}		
 
 		<div id="pnav">
 		{% if prev %}<a href="{{ prev.get_absolute_url }}">← Предыдущая цитата |</a>{% endif %}
 		<a href="{{ paragraph.chapter.get_absolute_url }}#{{ paragraph.pk }}">↑ Вернуться к главе</a>
 		     {% if next %}<a href="{{ next.get_absolute_url }}">| Следующая цитата →</a>{% endif %}
-		</div>
-
-
+		</div>        
 
         <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?29"></script>
 	
@@ -30,7 +28,11 @@
 	        <!-- Put this div tag to the place, where the Comments block will be -->
 	        <a name="comments"></a><div id="vk_comments"></div>
 	        <script type="text/javascript">
-	            VK.Widgets.Comments("vk_comments", {limit: 15, width: "500", attach: "*"}, 'par_{{ paragraph.pk }}');
+                function addVKComment(num, last_comment, date, sign){
+                    $.getJSON("/vk_comment", {paragraph: {{ paragraph.pk }}, content: last_comment});
+                }
+
+	            VK.Widgets.Comments("vk_comments", {limit: 15, width: "500", attach: "*", onChange: addVKComment}, 'par_{{ paragraph.pk }}');
 	        </script>
 		</div>
 	</div>

@@ -29,7 +29,7 @@
 	        <a name="comments"></a><div id="vk_comments"></div>
 	        <script type="text/javascript">
                 function addVKComment(num, last_comment, date, sign){
-                    $.getJSON("/vk_comment", {paragraph: {{ paragraph.pk }}, content: last_comment});
+                    $.getJSON("/book/vk_comment", {paragraph: {{ paragraph.pk }}, content: last_comment});
                 }
 
 	            VK.Widgets.Comments("vk_comments", {limit: 15, width: "500", attach: "*", onChange: addVKComment}, 'par_{{ paragraph.pk }}');

@@ -39,7 +39,12 @@
                 'quickServices': ['vkontakte','facebook','twitter']
             },
             link: $(this).data('url'),
-            title: $(this).data('title')
+            title: $(this).data('title'),
+            serviceSpecific: {
+                twitter: {
+                 title: $(this).data('title-twitter')
+                }
+            }
         });        
     }); 
 </script>

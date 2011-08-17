@@ -56,9 +56,9 @@ def vk_comment(request):
     except Paragraph.DoesNotExist:
         raise Http404
     
-    url = paragraph.get_absolute_url()
+    url = u"http://книгасамурая.рф" + paragraph.get_absolute_url()
     mail_admins(u"Хагакурэ: новый комментарий",
-                "Новый комментарий у параграфа %s" % url,                
+                u"Новый комментарий у параграфа %s" % url,                
     )
 
     return HttpResponse('ok')

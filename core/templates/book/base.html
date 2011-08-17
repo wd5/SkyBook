@@ -47,6 +47,16 @@
             }
         });        
     }); 
+    
+    $(function(){
+        $(".js-comment-link").click(function(){
+            $("#comment_" + $(this).data('comment')).show();
+        })
+
+        $(".js-comment").click(function(){
+            $(this).hide();
+        })
+    })
 </script>
 
 <script type="text/javascript">

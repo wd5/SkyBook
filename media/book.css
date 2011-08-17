@@ -154,3 +154,18 @@ a {
 #pnav a {
 	text-decoration: none;
 }
+
+
+.comment-link {
+    border-bottom: 1px dashed blue;
+    cursor: pointer;
+}
+
+.comment {
+    display: none;
+    cursor: pointer;
+    
+    color: gray;
+    font: 80%;
+    font-style: italic;
+}
